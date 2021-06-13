@@ -4,6 +4,7 @@ import camundajar.impl.com.google.gson.Gson;
 import camundajar.impl.com.google.gson.reflect.TypeToken;
 import org.camunda.bpm.engine.delegate.DelegateExecution;
 import org.camunda.bpm.engine.delegate.JavaDelegate;
+import org.springframework.stereotype.Component;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -13,6 +14,7 @@ import java.net.URLConnection;
 import java.util.HashMap;
 import java.util.Map;
 
+@Component
 public class WeatherCondition implements JavaDelegate {
     private static Map<String, Object> jsonToMap(String str){
         Map<String,Object> map = new Gson().fromJson(str,new TypeToken<HashMap<String,Object>>(){}.getType());
